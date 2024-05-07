@@ -1,3 +1,6 @@
+
+
+
 // Function to add playsinline attribute to video elements
 function addPlaysInlineAttribute() {
     const videos = document.querySelectorAll('video');
