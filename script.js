@@ -1,13 +1,24 @@
 const plugs = document.querySelectorAll('.plug');
 const button = document.getElementById('button');
+
 let currentPlug = null;
 let isDragging = false;
 
-// Common function to handle mouse and touch events
-function handleDragOrTouch(event, isTouch) {
+// Mouse events
+button.addEventListener('dragstart', () => {
+    isDragging = true;
+});
+
+document.addEventListener('dragover', (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener('drop', (event) => {
     event.preventDefault();
     if (isDragging) {
-        const { clientX, clientY } = isTouch ? event.touches[0] : event;
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
         let closestPlug = null;
         let minDistance = Infinity;
 
@@ -15,7 +26,8 @@ function handleDragOrTouch(event, isTouch) {
             const plugRect = plug.getBoundingClientRect();
             const plugX = plugRect.left + plugRect.width / 2;
             const plugY = plugRect.top + plugRect.height / 2;
-            const distance = Math.sqrt((clientX - plugX) ** 2 + (clientY - plugY) ** 2);
+
+            const distance = Math.sqrt((mouseX - plugX) ** 2 + (mouseY - plugY) ** 2);
 
             if (distance < minDistance) {
                 minDistance = distance;
@@ -36,9 +48,10 @@ function handleDragOrTouch(event, isTouch) {
         const plugRect = closestPlug.getBoundingClientRect();
         const plugX = plugRect.left + plugRect.width / 2;
         const plugY = plugRect.top + plugRect.height / 2;
+
         const buttonRect = button.getBoundingClientRect();
-        const buttonX = clientX - buttonRect.width / 2;
-        const buttonY = clientY - buttonRect.height / 2;
+        const buttonX = mouseX - buttonRect.width / 2;
+        const buttonY = mouseY - buttonRect.height / 2;
 
         if (minDistance <= 70) {
             moveButtonToPlug(button, plugX, plugY);
@@ -48,35 +61,67 @@ function handleDragOrTouch(event, isTouch) {
 
         isDragging = false;
     }
-}
-
-// Mouse events
-button.addEventListener('dragstart', () => {
-    isDragging = true;
 });
-
-document.addEventListener('dragover', (event) => {
-    event.preventDefault();
-}, { passive: false });
-
-document.addEventListener('drop', (event) => {
-    handleDragOrTouch(event, false);
-}, { passive: false });
 
 // Touch events
 button.addEventListener('touchstart', (event) => {
     isDragging = true;
-}, { passive: false });
+});
 
 document.addEventListener('touchmove', (event) => {
-    handleDragOrTouch(event, true);
+    event.preventDefault();
+    if (isDragging) {
+        const touch = event.touches[0];
+        const mouseX = touch.clientX;
+        const mouseY = touch.clientY;
+
+        let closestPlug = null;
+        let minDistance = Infinity;
+
+        plugs.forEach((plug) => {
+            const plugRect = plug.getBoundingClientRect();
+            const plugX = plugRect.left + plugRect.width / 2;
+            const plugY = plugRect.top + plugRect.height / 2;
+
+            const distance = Math.sqrt((mouseX - plugX) ** 2 + (mouseY - plugY) ** 2);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestPlug = plug;
+            }
+        });
+
+        if (currentPlug !== closestPlug) {
+            if (currentPlug) {
+                pauseAndResetVideo(currentPlug);
+            }
+            currentPlug = closestPlug;
+            if (currentPlug) {
+                playVideo(currentPlug);
+            }
+        }
+
+        const plugRect = closestPlug.getBoundingClientRect();
+        const plugX = plugRect.left + plugRect.width / 2;
+        const plugY = plugRect.top + plugRect.height / 2;
+
+        const buttonRect = button.getBoundingClientRect();
+        const buttonX = mouseX - buttonRect.width / 2;
+        const buttonY = mouseY - buttonRect.height / 2;
+
+        if (minDistance <= 70) {
+            moveButtonToPlug(button, plugX, plugY);
+        } else {
+            moveButtonToPosition(button, buttonX, buttonY);
+        }
+    }
 }, { passive: false });
 
 document.addEventListener('touchend', (event) => {
     if (isDragging) {
         isDragging = false;
     }
-}, { passive: false });
+});
 
 // Function to pause and reset video
 function pauseAndResetVideo(plug) {
