@@ -1,3 +1,14 @@
+// Function to add playsinline attribute to video elements
+function addPlaysInlineAttribute() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.setAttribute('playsinline', '');
+    });
+}
+
+// Call the function to add playsinline attribute to video elements
+addPlaysInlineAttribute();
+
 const plugs = document.querySelectorAll('.plug');
 const button = document.getElementById('button');
 
