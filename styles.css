@@ -1,3 +1,8 @@
+:root {
+    --size: 70px;
+}
+
+
 body {
     margin: 0;
     overflow: hidden;
@@ -10,36 +15,156 @@ body {
 
 
 
+/*
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 200 to 900
+font-family: "Source Code Pro", monospace;
+font-optical-sizing: auto;
+font-weight: <weight>;
+font-style: normal;*/
+
+
+
+
+
+h2{
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(50, 50, 50);
+    letter-spacing: 10px;
+    font-size: 10px;
+
+}
+
+p{
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(150, 150, 150);
+    letter-spacing: 10px;
+    font-size: 10px;
+
+}
+
+#title {
+    position: fixed;
+    top: 25vh;
+    padding-left: 10px;
+}
+
+#timestamp1 {
+    position: fixed;
+    top: 54vh;
+    left: calc(20% - 83px);
+}
+
+#timestamp2 {
+    position: fixed;
+    top: 54vh;
+    left: calc(40% - 83px);
+}
+
+#timestamp3 {
+    position: fixed;
+    top: 54vh;
+    left: calc(60% - 83px);
+}
+
+#timestamp4 {
+    position: fixed;
+    top: 54vh;
+    left: calc(80% - 83px);
+}
+
+#instruction {
+    position: fixed;
+
+    width: 500px;
+    top: 75vh;
+    left: calc(50% - 250px);
+}
+
+
+
+
+#quote1 {
+    position: fixed;
+    width: 200px;
+    top: 40vh;
+    left: calc(20% - 100px);
+}
+
+#quote2 {
+    position: fixed;
+    width: 200px;
+    top: 40vh;
+    left: calc(40% - 100px);
+}
+
+#quote3 {
+    position: fixed;
+    width: 200px;
+    top: 40vh;
+    left: calc(60% - 100px);
+}
+
+#quote4 {
+    position: fixed;
+    width: 200px;
+    top: 40vh;
+    left: calc(80% - 100px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .circle {
     position: fixed;
     z-index: 5;
-    width: 92px;
-    height: 92px;
+    width: 62px;
+    height: 62px;
     border-radius: 50%; /* Makes the element round */
-    border: 4px solid rgba(255, 255, 255, 1); /* Defines a solid border with some transparency */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Adds a blurred effect to the border */
+    border: 4px solid rgba(255, 255, 255, .3); /* Defines a solid border with some transparency */
+    box-shadow: 0 0 15px rgba(255, 255, 255, .5); /* Adds a blurred effect to the border */
     background-color: none; /* Makes the circle have no filling */
 }
 
 #circle1 {
-    top: calc(50% - 50px);
-    left: calc(50% - 350px);
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(20% - calc(var(--size) * 0.5));
 }
 
 #circle2 {
-    top: calc(50% - 50px);
-    left: calc(50% - 150px);
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(40% - calc(var(--size) * 0.5));
 }
 
 #circle3 {
-    top: calc(50% - 50px);
-    left: calc(50% + 50px);
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(60% - calc(var(--size) * 0.5));
 }
 
 #circle4 {
-    top: calc(50% - 50px);
-    left: calc(50% + 250px);
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(80% - calc(var(--size) * 0.5));
 }
 
 
@@ -48,48 +173,47 @@ body {
 
 .plug {
     position: fixed;
-    width: 100px;
-    height: 100px;
+    width: var(--size);
+    height: var(--size);
     background-size: cover;
 }
 
 #plug1 {
-    top: calc(50% - 50px);
-    left: calc(50% - 350px);
-    background-image: url('IMG/Plug-V02.png');
-    transform: rotate(17deg);
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(20% - calc(var(--size) * 0.5));
+    background-image: url('IMG/Plug-V03.png');
 }
 
 #plug2 {
-    top: calc(50% - 50px);
-    left: calc(50% - 150px);
-    background-image: url('IMG/Plug-V02.png');
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(40% - calc(var(--size) * 0.5));
+    background-image: url('IMG/Plug-V03.png');
     transform: rotate(17deg);
 }
 
 #plug3 {
-    top: calc(50% - 50px);
-    left: calc(50% + 50px);
-    background-image: url('IMG/Plug-V02.png');
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(60% - calc(var(--size) * 0.5));
+    background-image: url('IMG/Plug-V03.png');
     transform: rotate(17deg);
 }
 
 #plug4 {
-    top: calc(50% - 50px);
-    left: calc(50% + 250px);
-    background-image: url('IMG/Plug-V02.png');
+    top: calc(50% - calc(var(--size) * 0.5));
+    left: calc(80% - calc(var(--size) * 0.5));
+    background-image: url('IMG/Plug-V03.png');
     transform: rotate(17deg);
 }
 
 
 
 #button {
-    top: calc(50% + 120px);
-    left: calc(50% - 50px);
+    top: 67vh;
+    left: calc(50% - calc(var(--size) * 0.5));
     position: absolute;
     z-index: 10;
-    width: 100px;
-    height: 100px;
+    width: var(--size);
+    height: var(--size);
 
     background-color: white;
     border-radius: 50%;
