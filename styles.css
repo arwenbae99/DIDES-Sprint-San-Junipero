@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:rgb(217, 217, 217);
+}
+
+
+
+
+.circle {
+    position: fixed;
+    z-index: 5;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%; /* Makes the element round */
+    border: 4px solid rgba(255, 255, 255, 1); /* Defines a solid border with some transparency */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Adds a blurred effect to the border */
+    background-color: none; /* Makes the circle have no filling */
+}
+
+#circle1 {
+    top: calc(50% - 50px);
+    left: calc(50% - 350px);
+}
+
+#circle2 {
+    top: calc(50% - 50px);
+    left: calc(50% - 150px);
+}
+
+#circle3 {
+    top: calc(50% - 50px);
+    left: calc(50% + 50px);
+}
+
+#circle4 {
+    top: calc(50% - 50px);
+    left: calc(50% + 250px);
+}
+
+
+
+
+
+.plug {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+#plug1 {
+    top: calc(50% - 50px);
+    left: calc(50% - 350px);
+    background-image: url('IMG/Plug-V02.png');
+    transform: rotate(17deg);
+}
+
+#plug2 {
+    top: calc(50% - 50px);
+    left: calc(50% - 150px);
+    background-image: url('IMG/Plug-V02.png');
+    transform: rotate(17deg);
+}
+
+#plug3 {
+    top: calc(50% - 50px);
+    left: calc(50% + 50px);
+    background-image: url('IMG/Plug-V02.png');
+    transform: rotate(17deg);
+}
+
+#plug4 {
+    top: calc(50% - 50px);
+    left: calc(50% + 250px);
+    background-image: url('IMG/Plug-V02.png');
+    transform: rotate(17deg);
+}
+
+
+
+#button {
+    top: calc(50% + 120px);
+    left: calc(50% - 50px);
+    position: absolute;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+
+    background-color: white;
+    border-radius: 50%;
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: none;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.playing {
+    display: block;
+}
