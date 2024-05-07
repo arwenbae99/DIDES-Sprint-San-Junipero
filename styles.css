@@ -21,22 +21,43 @@ body {
 font-family: "Source Code Pro", monospace;
 font-optical-sizing: auto;
 font-weight: <weight>;
-font-style: normal;*/
+font-style: normal;
+
+.poller-one-regular {
+  font-family: "Poller One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+*/
 
 
-
-
-
-h2{
-    font-family: "Source Code Pro", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
+h1 {
+    font-family: "Poller One", serif;
+    font-weight: 400;
     text-align: center;
-    color: rgb(50, 50, 50);
-    letter-spacing: 10px;
-    font-size: 10px;
+    color: #ffffff;
+    letter-spacing: 0px;
+    font-size: 10vh;
+    line-height: 5vw;
 
 }
+
+#title1 {
+    position: fixed;
+    top: 61vh;
+    align-self: center;
+    z-index: 1;
+}
+
+#title2 {
+    position: fixed;
+    top: 61vh;
+    align-self: center;
+    z-index: 3;
+    opacity: 0.1;
+}
+
+
 
 p{
     font-family: "Source Code Pro", monospace;
@@ -46,14 +67,8 @@ p{
     color: rgb(150, 150, 150);
     letter-spacing: 10px;
     font-size: 10px;
-
 }
 
-#title {
-    position: fixed;
-    top: 25vh;
-    padding-left: 10px;
-}
 
 #timestamp1 {
     position: fixed;
@@ -83,39 +98,35 @@ p{
     position: fixed;
 
     width: 500px;
-    top: 75vh;
+    top: 20vh;
     left: calc(50% - 250px);
 }
 
-
-
-
-#quote1 {
+.quote {
     position: fixed;
-    width: 200px;
-    top: 40vh;
-    left: calc(20% - 100px);
+    z-index: 3;
+    justify-self: center;
+    align-self: center;
+    top: 85vh;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
 }
 
-#quote2 {
-    position: fixed;
-    width: 200px;
-    top: 40vh;
-    left: calc(40% - 100px);
+h2{
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 5px;
+    font-size: 20px;
+
 }
 
-#quote3 {
-    position: fixed;
-    width: 200px;
-    top: 40vh;
-    left: calc(60% - 100px);
-}
-
-#quote4 {
-    position: fixed;
-    width: 200px;
-    top: 40vh;
-    left: calc(80% - 100px);
+.quote.show {
+    opacity: 1; /* Make the quote visible */
+    display: block; /* Show the quote */
 }
 
 
@@ -208,10 +219,10 @@ p{
 
 
 #button {
-    top: 67vh;
-    left: calc(50% - calc(var(--size) * 0.5));
     position: absolute;
     z-index: 10;
+    top: 25vh;
+    align-self: center;
     width: var(--size);
     height: var(--size);
 
@@ -235,4 +246,230 @@ p{
 
 .playing {
     display: block;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+
+    
+    h1 {
+        font-family: "Poller One", serif;
+        font-weight: 400;
+        text-align: center;
+        color: #ffffff;
+        letter-spacing: 0px;
+        font-size: 12vw;
+        line-height: 11vw;
+    
+    }
+    
+    #title1 {
+        position: fixed;
+        top: 70vh;
+        align-self: center;
+        z-index: 1;
+    }
+    
+    #title2 {
+        position: fixed;
+        top: 70vh;
+        align-self: center;
+        z-index: 3;
+        opacity: 0.1;
+    }
+    
+    
+    
+    p{
+        font-family: "Source Code Pro", monospace;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        text-align: center;
+        color: rgb(150, 150, 150);
+        letter-spacing: 4px;
+        font-size: 10px;
+    }
+    
+    
+    #timestamp1 {
+        position: fixed;
+        top: 40%;
+        left: calc(33.3% - 58px);
+    }
+    
+    #timestamp2 {
+        position: fixed;
+        top: 40%;
+        left: calc(66.6% - 58px);
+    }
+    
+    #timestamp3 {
+        position: fixed;
+        top: 60%;
+        left: calc(33.3% - 58px);
+    }
+    
+    #timestamp4 {
+        position: fixed;
+        top: 60%;
+        left: calc(66.6% - 58px);
+    }
+    
+    #instruction {
+        position: fixed;
+    
+        width: 500px;
+        top: 10vh;
+        left: calc(50% - 250px);
+    }
+    
+    .quote {
+        position: fixed;
+        z-index: 3;
+        justify-self: center;
+        align-self: center;
+        top: 85vh;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: none;
+    }
+    
+    h2{
+        font-family: "Source Code Pro", monospace;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        text-align: center;
+        color: #ffffff;
+        letter-spacing: 5px;
+        font-size: 20px;
+    
+    }
+    
+    .quote.show {
+        opacity: 1; /* Make the quote visible */
+        display: block; /* Show the quote */
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+    
+    .circle {
+        position: fixed;
+        z-index: 5;
+        width: 62px;
+        height: 62px;
+        border-radius: 50%; 
+        border: 4px solid rgba(255, 255, 255, .3); 
+        box-shadow: 0 0 15px rgba(255, 255, 255, .5); 
+        background-color: none; 
+    }
+    */
+    
+    #circle1 {
+        top: calc(35% - calc(var(--size) * 0.5));
+        left: calc(33.3% - calc(var(--size) * 0.5));
+    }
+    
+    #circle2 {
+        top: calc(35% - calc(var(--size) * 0.5));
+        left: calc(66.6% - calc(var(--size) * 0.5));
+    }
+    
+    #circle3 {
+        top: calc(55% - calc(var(--size) * 0.5));
+        left: calc(33.3% - calc(var(--size) * 0.5));
+    }
+    
+    #circle4 {
+        top: calc(55% - calc(var(--size) * 0.5));
+        left: calc(66.6% - calc(var(--size) * 0.5));
+    }
+    
+    
+    
+    
+    
+    .plug {
+        position: fixed;
+        width: var(--size);
+        height: var(--size);
+        background-size: cover;
+    }
+    
+    #plug1 {
+        top: calc(35% - calc(var(--size) * 0.5));
+        left: calc(33.3% - calc(var(--size) * 0.5));
+        background-image: url('IMG/Plug-V03.png');
+    }
+    
+    #plug2 {
+        top: calc(35% - calc(var(--size) * 0.5));
+        left: calc(66.6% - calc(var(--size) * 0.5));
+        background-image: url('IMG/Plug-V03.png');
+        transform: rotate(17deg);
+    }
+    
+    #plug3 {
+        top: calc(55% - calc(var(--size) * 0.5));
+        left: calc(33.3% - calc(var(--size) * 0.5));
+        background-image: url('IMG/Plug-V03.png');
+        transform: rotate(17deg);
+    }
+    
+    #plug4 {
+        top: calc(55% - calc(var(--size) * 0.5));
+        left: calc(66.6% - calc(var(--size) * 0.5));
+        background-image: url('IMG/Plug-V03.png');
+        transform: rotate(17deg);
+    }
+    
+    
+    
+    #button {
+        position: absolute;
+        z-index: 10;
+        top: 15vh;
+        align-self: center;
+        width: var(--size);
+        height: var(--size);
+    
+        background-color: white;
+        border-radius: 50%;
+        cursor: move;
+        transition: all 0.3s ease;
+    }
+    
+    .video {
+        position: fixed;
+        top: 0;
+        align-self: center;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        display: none;
+        z-index: 1;
+        object-fit: cover;
+    }
+    
+    .playing {
+        display: block;
+    }
 }
