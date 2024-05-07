@@ -268,14 +268,14 @@ h2{
     
     #title1 {
         position: fixed;
-        top: 64vh;
+        top: 62vh;
         align-self: center;
         z-index: 1;
     }
     
     #title2 {
         position: fixed;
-        top: 64vh;
+        top: 62vh;
         align-self: center;
         z-index: 3;
         opacity: 0.1;
