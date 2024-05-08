@@ -49,6 +49,13 @@ h1 {
     z-index: 1;
 }
 
+#directed {
+    position: fixed;
+    justify-self: center;
+    align-self: center;
+    top: 85vh;
+}
+
 #title2 {
     position: fixed;
     top: 61vh;
