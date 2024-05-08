@@ -232,8 +232,7 @@ h2{
     align-self: center;
     width: var(--size);
     height: var(--size);
-    background-image: url('https://giphy.com/embed/6036p0cTnjUrNFpAlr'); 
-    background-size: cover;
+    background-color: #ffffff;
     border-radius: 50%;
     cursor: move;
     transition: all 0.3s ease;
