@@ -232,7 +232,7 @@ h2{
     align-self: center;
     width: var(--size);
     height: var(--size);
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 50%;
     cursor: move;
     transition: all 0.3s ease;
